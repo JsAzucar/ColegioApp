@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "362439566994",
+    "project_id": "colegioapp-b1512",
+    "storage_bucket": "colegioapp-b1512.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362439566994:android:5c5b05a18a1db24bb8e84b",
+        "android_client_info": {
+          "package_name": "com.sugardaddy.colegioapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZYXHWLrAbmUu0YRa4GVxI9tn0Ohcxywk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
