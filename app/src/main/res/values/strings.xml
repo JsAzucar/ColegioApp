@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ColegioApp</string>
+    <string name="app_name">Colegio Mar</string>
+    <string name="registrar_notas">REGISTRAR NOTAS</string>
+    <string name="mostrar_nota_global">MOSTRAR NOTA GLOBAL</string>
+    <string name="editar_estudiante">EDITAR ESTUDIANTES</string>
+    <string name="mostrar_estudiante">MOSTRAR ESTUDIANTES</string>
 </resources>
