@@ -1,7 +1,28 @@
 <resources>
+
+    <!--Menu -->
     <string name="app_name">Colegio Mar</string>
     <string name="registrar_notas">REGISTRAR NOTAS</string>
     <string name="mostrar_nota_global">MOSTRAR NOTA GLOBAL</string>
     <string name="editar_estudiante">EDITAR ESTUDIANTES</string>
     <string name="mostrar_estudiante">MOSTRAR ESTUDIANTES</string>
+
+    <!--Registrar notas y Mostrar Estudiantes -->
+    <string name="nombre">Nombre estudiante</string>
+    <string name="apellido">Apellido estudiante</string>
+    <string name="nota">Nota </string>
+    <string name="registrar">Guardar</string>
+
+    <string-array name="opciones_grado">
+        <item>1 grado</item>
+        <item>2 grado</item>
+        <item>3 grado</item>
+    </string-array>
+
+    <string-array name="opciones_materia">
+        <item>Ciencias Naturales</item>
+        <item>Matematica</item>
+        <item>Lenguaje</item>
+    </string-array>
+
 </resources>
