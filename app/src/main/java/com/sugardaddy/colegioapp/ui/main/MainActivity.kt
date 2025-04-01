@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.sugardaddy.colegioapp.R
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnEditar = findViewById<Button>(R.id.btnEditar)
         btnEditar.setOnClickListener {
-            val pantalla = Intent(this, EditarEstudiante::class.java)
+            val pantalla = Intent(this, EditarEliminarEstudiantes::class.java)
             startActivity(pantalla)
         }
     }
