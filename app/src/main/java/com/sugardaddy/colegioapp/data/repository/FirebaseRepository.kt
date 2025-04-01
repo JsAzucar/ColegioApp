@@ -22,14 +22,14 @@ class FirebaseRepository {
                 val estudianteExistente = child.getValue(Estudiante::class.java)
 
                 if(estudianteExistente != null && estudianteExistente.apellido == estudiante.apellido &&
-                    estudianteExistente.grado == estudiante.grado){
+                    estudianteExistente.grado == estudiante.grado && estudianteExistente.materia == estudiante.materia){
                     estudianteExiste = true
                     break
                 }
             }
 
             if(estudianteExiste){
-                onFailure("El estudiante ya esta registrado en este grado.")
+                onFailure("El estudiante ya esta registrado en ese grado o materia")
             }else{
                 val userId = dbRef.push().key ?: return@addOnSuccessListener
                 val nuevoEstudiante = estudiante.copy(id = userId)
@@ -64,4 +64,50 @@ class FirebaseRepository {
             onFailure(error.message ?: "Error al leer los datos")
         }
     }
+    fun eliminarEstudiante(
+        id: String,
+        onSuccess: () -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        dbRef.child(id).removeValue()
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { onFailure(it.message ?: "Error al eliminar") }
+    }
+
+    fun actualizarEstudiante(estudiante: Estudiante, onSuccess: () -> Unit, onFailure: (String) -> Unit) {
+        dbRef.child(estudiante.id).setValue(estudiante)
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { ex -> onFailure(ex.message ?: "Error al actualizar") }
+    }
+
+
+
+    fun verificarDuplicadoEditado(
+        estudiante: Estudiante,
+        onResult: (existe: Boolean) -> Unit
+    ) {
+        val query = dbRef.orderByChild("nombre").equalTo(estudiante.nombre)
+
+        query.get().addOnSuccessListener { snapshot ->
+            var duplicado = false
+
+            for (child in snapshot.children) {
+                val existente = child.getValue(Estudiante::class.java)
+                if (existente != null &&
+                    existente.id != estudiante.id &&
+                    existente.apellido == estudiante.apellido &&
+                    existente.grado == estudiante.grado &&
+                    existente.materia == estudiante.materia) {
+                    duplicado = true
+                    break
+                }
+            }
+
+            onResult(duplicado)
+        }.addOnFailureListener {
+            onResult(false)
+        }
+    }
+
+
 }
