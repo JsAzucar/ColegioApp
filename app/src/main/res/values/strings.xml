@@ -25,4 +25,15 @@
         <item>Lenguaje</item>
     </string-array>
 
+    <!--Login -->
+    <string name="maIngresar">Ingresar</string>
+    <string name="maRegistro">¿No se ha registrado? Regístrese aquí</string>
+    <string name="maUsuario">Usuario:</string>
+    <string name="maContraseña">Contraseña:</string>
+
+    <string name="marUsuario">Ingrese su usuario</string>
+    <string name="marContraseña">Contraseña</string>
+    <string name="marRegistro">Registrar  usuario</string>
+    <string name="marRegreso">Regresar</string>
+
 </resources>
